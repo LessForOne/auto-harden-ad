@@ -1,4 +1,4 @@
-package inactive
+package rdp
 
 import (
 	"fmt"
@@ -6,10 +6,10 @@ import (
 	"os/exec"
 )
 
-func Inact() error {
+func Smb() error {
 	fmt.Println("Test")
 
-	cmd := exec.Command("powershell", "Search-ADAccount -AccountInactive -UsersOnly | Disable-ADAccount")
+	cmd := exec.Command("powershell", "Get-LocalGroupMember", "-Group", "\"Remote Desktop Users\"")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
