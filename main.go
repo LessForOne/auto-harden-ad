@@ -1,6 +1,7 @@
 package main
 
 import (
+	"auto-harden-ad/pkg/inactive"
 	"auto-harden-ad/pkg/smb"
 	"fmt"
 )
@@ -21,8 +22,9 @@ func main() {
 		smb.Smb()
 		fmt.Println("smbv1 bien desactivé")
 	case 2:
-		fmt.Println("pas dispo")
+		inactive.Inact()
+		fmt.Println("comptes inactifs desactivés")
 	default:
-		fmt.Println("non reconnu")
+		fmt.Println("desactivation rdp pour user nn auto")
 	}
 }
